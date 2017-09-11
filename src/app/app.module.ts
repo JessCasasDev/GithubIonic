@@ -6,6 +6,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { UsersPage } from '../pages/users/users';
 import { UserDetailsPage } from '../pages/user-details/user-details';
+import { ReposPage } from '../pages/repos/repos'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -15,7 +16,8 @@ import { GithubProvider } from '../providers/github';
   declarations: [
       MyApp,
       UsersPage,
-      UserDetailsPage
+      UserDetailsPage,
+      ReposPage
   ],
   imports: [
       BrowserModule,
@@ -26,7 +28,8 @@ import { GithubProvider } from '../providers/github';
   entryComponents: [
       MyApp,
       UsersPage,
-      UserDetailsPage
+      UserDetailsPage,
+      ReposPage
   ],
 
   providers: [
