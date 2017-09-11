@@ -27,4 +27,19 @@ export class GithubProvider {
         return this.http.get(`${this.githubApiUrl}/search/users?q=${searchParam}`)
             .map(res => <User[]>(res.json().items))
     }
+
+
+    /* Funcionalidad Adicional */
+    searchRepo(username){
+        return new Promise((resolve, reject) => {
+            return this.http.get(`${this.githubApiUrl}/users/${username}/repos`)
+            .map(res => <any[]>(res.json()))
+            .subscribe(data => {
+                resolve(data);
+            }, (err) => {
+                console.log("ERROR", err);
+                reject(err);
+            });
+        });
+    }
 }
